@@ -196,10 +196,13 @@ form textarea:focus {
   border-color: var(--accent);
 }
 
-.checkbox {
-  margin-top: 20px;
-  font-size: 14px;
-  color: var(--text-muted);
+.checkbox{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top:18px;
+  font-size:14px;
+  color:var(--text-muted);
 }
 
 .checkbox input {
@@ -213,7 +216,7 @@ button.cta {
 }
 
 .org-scope {
-  margin-top: 32px;
+  margin-top: 28px;
   padding-top: 24px;
   border-top: 1px dashed var(--border);
 }
@@ -225,7 +228,7 @@ button.cta {
 /* ===== FORM FEEDBACK ===== */
 
 .form-status {
-  margin-top: 20px;
+  margin-top: 16px;
   padding: 14px 16px;
   border-radius: 10px;
   font-size: 14px;
@@ -300,7 +303,7 @@ button.cta.loading::after {
           <li>High-level guidance</li>
           <li>Suitable for initial clarity</li>
         </ul>
-        <a href="#discussion-form" class="cta">Request Voice Discussion</a>
+        <a href="#discussion-form" class="cta" onclick="selectMode('voice')">Request Voice Discussion</a>
       </div>
 
       <div class="card">
@@ -311,13 +314,14 @@ button.cta.loading::after {
           <li>Deeper engagement</li>
           <li>Recommended for serious inquiries</li>
         </ul>
-        <a href="#discussion-form" class="cta">Request Video Discussion</a>
+        <a href="#discussion-form" class="cta" onclick="selectMode('video')">Request Video Discussion</a>
       </div>
     </div>
 
     <div class="warning">
       <strong>Important:</strong> Payment is required to schedule this discussion. This fee is for professional evaluation time and does not guarantee engagement.
     </div>
+    <p class="warning">Payment is processed in USD via PayPal.</p>
   </section>
 
   <section class="card">
@@ -337,7 +341,7 @@ button.cta.loading::after {
   </p>
 
   <div class="card">
-    <form action="mailto:youremail@domain.com" method="POST" enctype="text/plain">
+    <form id="discussionForm">
 
       <!-- Request Type -->
       <label>Type of Audit Request *</label>
@@ -408,9 +412,9 @@ button.cta.loading::after {
       <label>Discussion Mode *</label>
       <select required>
         <option value="">Select discussion type</option>
-        <option>Paid Voice Discussion (20 mins)</option>
-        <option>Paid Video Discussion (30 mins)</option>
-        <option>Written Inquiry (No scheduling)</option>
+        <option value="voice">Paid Voice Discussion (20 mins)</option>
+        <option value="video">Paid Video Discussion (30 mins)</option>
+        <option value="video">Written Inquiry (No scheduling)</option>
       </select>
       <p style="font-size:13px; color:var(--text-muted); margin-top:6px;">
   Written requests are reviewed asynchronously. Paid discussions allow real-time clarification and faster alignment.
@@ -457,7 +461,7 @@ button.cta.loading::after {
 
       <!-- Submit -->
       <button type="submit" class="cta" id="submitBtn">Submit Request</button>
-
+      <div class="form-status success" id="successMsg">Request prepared. Redirecting…</div>
       <p style="font-size:13px; color:var(--text-muted); margin-top:12px;">
         Written inquiries do not include scheduling or guaranteed response timelines.
       </p>
@@ -483,12 +487,34 @@ button.cta.loading::after {
   <script>
   const auditType = document.getElementById('auditType');
   const orgScope = document.getElementById('orgScope');
+  const discussionMode=document.getElementById('discussionMode');
 
   auditType.addEventListener('change', () => {
-    orgScope.style.display = auditType.value === 'Organization'
+    orgScope.style.display = auditType.value === 'Organization Audit'
       ? 'block'
       : 'none';
   });
+  function selectMode(mode){
+  discussionMode.value = mode;
+}
+
+document.getElementById('discussionForm').addEventListener('submit',function(e){
+  e.preventDefault();
+
+  const mode = discussionMode.value;
+  const mail = "mailto:sachin200215.ssb@gmail.com?subject=VEXOR Discussion Request";
+
+  window.location.href = mail;
+
+  setTimeout(()=>{
+    if(mode==="voice"){
+      window.open("https://www.paypal.com/ncp/payment/S7KD4YHREZ7QW","_blank");
+    }
+    if(mode==="video"){
+      window.open("https://www.paypal.com/ncp/payment/PFKAPRSVC2BPA","_blank");
+    }
+  },500);
+});
 </script>
 <script>
   const form = document.querySelector("form");
