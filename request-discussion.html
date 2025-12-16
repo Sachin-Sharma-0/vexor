@@ -198,15 +198,25 @@ form textarea:focus {
 
 .checkbox{
   display:flex;
-  align-items:center;
-  gap:8px;
+  align-items:flex-start;
+  gap:12px;
   margin-top:18px;
   font-size:14px;
   color:var(--text-muted);
 }
 
 .checkbox input {
-  margin-right: 8px;
+    
+  margin-right: 3px;
+}
+
+.checkbox a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.checkbox a:hover {
+  text-decoration: underline;
 }
 
 button.cta {
@@ -341,11 +351,11 @@ button.cta.loading::after {
   </p>
 
   <div class="card">
-    <form id="discussionForm">
+    <form id="discussionForm" action="https://formspree.io/f/xnnekngr" method="POST">
 
       <!-- Request Type -->
       <label>Type of Audit Request *</label>
-      <select id="auditType" required>
+      <select id="auditType" name="auditType" required>
         <option value="">Select an option</option>
         <option>Employee Audit</option>
         <option>Team Audit</option>
@@ -368,7 +378,7 @@ button.cta.loading::after {
     </p>
 
     <label>Approximate Employee Count</label>
-    <select>
+    <select name="orgEmployeeCount">
         <option value="">Select range</option>
         <option>1 – 25</option>
         <option>26 – 100</option>
@@ -378,10 +388,10 @@ button.cta.loading::after {
     </select>
 
     <label>Industry / Sector</label>
-    <input type="text" placeholder="e.g., IT Services, Manufacturing, Education, Healthcare">
+    <input type="text" name="orgIndustry" placeholder="e.g., IT Services, Manufacturing, Education, Healthcare">
 
     <label>Primary Concern</label>
-    <select>
+    <select name="orgConcern">
         <option value="">Select primary concern</option>
         <option>Skill-role mismatch</option>
         <option>Leadership capability gaps</option>
@@ -392,7 +402,7 @@ button.cta.loading::after {
     </select>
 
     <label>Audit Urgency</label>
-    <select>
+    <select name="orgUrgency">
         <option value="">Select timeline</option>
         <option>Immediate (within 30 days)</option>
         <option>1 – 3 months</option>
@@ -401,7 +411,7 @@ button.cta.loading::after {
     </select>
 
     <label class="checkbox">
-        <input type="checkbox">
+        <input type="checkbox" name="orgAuthorityConfirmation">
         I confirm that I am part of the decision-making authority or officially delegated for this request.
     </label>
 
@@ -410,11 +420,11 @@ button.cta.loading::after {
 
       <!-- Discussion Mode -->
       <label>Discussion Mode *</label>
-      <select required>
+      <select required id="discussionMode" name="discussionMode">
         <option value="">Select discussion type</option>
         <option value="voice">Paid Voice Discussion (20 mins)</option>
         <option value="video">Paid Video Discussion (30 mins)</option>
-        <option value="video">Written Inquiry (No scheduling)</option>
+        <option value="written">Written Inquiry (No scheduling)</option>
       </select>
       <p style="font-size:13px; color:var(--text-muted); margin-top:6px;">
   Written requests are reviewed asynchronously. Paid discussions allow real-time clarification and faster alignment.
@@ -423,31 +433,36 @@ button.cta.loading::after {
 
       <!-- Identity -->
       <label>Full Name *</label>
-      <input type="text" required placeholder="Your full name">
+      <input type="text" name="fullName" required placeholder="Your full name">
 
       <label>Organization / Institution *</label>
-      <input type="text" required placeholder="Company, school, or institution name">
+      <input type="text" name="organization" required placeholder="Company, school, or institution name">
 
       <label>Official Email Address *</label>
-      <input type="email" required placeholder="name@organization.com">
+      <input type="email" name="email" required placeholder="name@organization.com">
 
       <!-- Location -->
       <label>Country *</label>
-      <input type="text" required placeholder="Country">
+      <input type="text" name="country" required placeholder="Country">
 
       <label>City (Optional)</label>
-      <input type="text" placeholder="City">
+      <input type="text" name="city" placeholder="City">
 
       <!-- Context -->
       <label>Brief Description *</label>
-      <textarea rows="5" required
+      <textarea rows="5" name="description" required
         placeholder="Briefly explain your concern, scope, or reason for reaching out. Be specific.">
       </textarea>
 
       <!-- Consent -->
       <label class="checkbox">
-        <input type="checkbox" required>
+        <input type="checkbox" name="consent" required>
         I acknowledge that this request is for professional evaluation only and does not constitute advisory or consulting services.
+      </label>
+
+      <label class="checkbox">
+        <input type="checkbox" name="legalAgreement" required>
+        I have read and agree to the <a href="legal-guidelines.html" target="_blank">Legal Guidelines</a>, <a href="terms.html" target="_blank">Terms of Service</a>, and <a href="privacy-policy.html" target="_blank">Privacy Policy</a>.
       </label>
 
       <div class="form-status success" id="formSuccess">
@@ -485,72 +500,82 @@ button.cta.loading::after {
   <script src="assets/js/include.js"></script>
 
   <script>
-  const auditType = document.getElementById('auditType');
-  const orgScope = document.getElementById('orgScope');
-  const discussionMode=document.getElementById('discussionMode');
+    const auditType = document.getElementById('auditType');
+    const orgScope = document.getElementById('orgScope');
+    const discussionMode = document.getElementById('discussionMode');
+    const form = document.getElementById("discussionForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const successMsg = document.getElementById("formSuccess");
+    const errorMsg = documentgetElementById("formError");
 
-  auditType.addEventListener('change', () => {
-    orgScope.style.display = auditType.value === 'Organization Audit'
-      ? 'block'
-      : 'none';
-  });
-  function selectMode(mode){
-  discussionMode.value = mode;
-}
+    auditType.addEventListener('change', () => {
+      orgScope.style.display = auditType.value === 'Organization Audit'
+        ? 'block'
+        : 'none';
+    });
 
-document.getElementById('discussionForm').addEventListener('submit',function(e){
-  e.preventDefault();
-
-  const mode = discussionMode.value;
-  const mail = "mailto:sachin200215.ssb@gmail.com?subject=VEXOR Discussion Request";
-
-  window.location.href = mail;
-
-  setTimeout(()=>{
-    if(mode==="voice"){
-      window.open("https://www.paypal.com/ncp/payment/S7KD4YHREZ7QW","_blank");
+    function selectMode(mode) {
+      discussionMode.value = mode;
     }
-    if(mode==="video"){
-      window.open("https://www.paypal.com/ncp/payment/PFKAPRSVC2BPA","_blank");
-    }
-  },500);
-});
-</script>
-<script>
-  const form = document.querySelector("form");
-  const submitBtn = document.getElementById("submitBtn");
-  const successMsg = document.getElementById("formSuccess");
-  const errorMsg = document.getElementById("formError");
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
 
-    // Reset states
-    successMsg.style.display = "none";
-    errorMsg.style.display = "none";
+      // UI loading state
+      submitBtn.classList.add("loading");
+      submitBtn.disabled = true;
+      successMsg.style.display = "none";
+      errorMsg.style.display = "none";
 
-    // UI loading state
-    submitBtn.classList.add("loading");
-    submitBtn.disabled = true;
+      const formData = new FormData(form);
+      const mode = discussionMode.value;
 
-    // Simulated submission delay (UI only)
-    setTimeout(() => {
-      submitBtn.classList.remove("loading");
-      submitBtn.disabled = false;
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        submitBtn.classList.remove("loading");
+        submitBtn.disabled = false;
 
-      // SUCCESS STATE (default)
-      successMsg.style.display = "block";
-      form.reset();
+        if (response.ok) {
+          // Show success message
+          successMsg.style.display = "block";
+          successMsg.scrollIntoView({ behavior: "smooth", block: "center" });
+          form.reset();
+          orgScope.style.display = 'none'; // Hide org scope again
 
-      // Hide org scope again after reset
-      document.getElementById("orgScope").style.display = "none";
-
-      // Scroll feedback into view
-      successMsg.scrollIntoView({ behavior: "smooth", block: "center" });
-
-    }, 1200);
-  });
-</script>
+          // Handle PayPal redirection after a short delay
+          setTimeout(() => {
+            if (mode === "voice") {
+              window.open("https://www.paypal.com/ncp/payment/S7KD4YHREZ7QW", "_blank");
+            }
+            if (mode === "video") {
+              window.open("https://www.paypal.com/ncp/payment/PFKAPRSVC2BPA", "_blank");
+            }
+          }, 500);
+        } else {
+          // Handle server errors
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              errorMsg.textContent = data["errors"].map(error => error["message"]).join(", ");
+            } else {
+              errorMsg.textContent = "Something went wrong. Please try again later.";
+            }
+            errorMsg.style.display = "block";
+          })
+        }
+      }).catch(error => {
+        // Handle network errors
+        submitBtn.classList.remove("loading");
+        submitBtn.disabled = false;
+        errorMsg.textContent = "Something went wrong. Please try again later.";
+        errorMsg.style.display = "block";
+      });
+    });
+  </script>
 <script src="assets/js/pricing.js"></script>
 
 
