@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Organization Audit | VEXOR</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #0f1115;
+      --bg-card: #151821;
+      --text-main: #e6e6e6;
+      --text-muted: #9aa0aa;
+      --accent: #7f8cff;
+      --border: #232736;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* ===== GLOBAL HEADER ===== */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 6%;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    .nav-links a {
+      margin-left: 28px;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-main);
+    }
+
+    /* ===== PAGE HEADER ===== */
+    header {
+      padding: 60px 6% 40px;
+    }
+
+    header h1 {
+      font-size: 30px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: var(--text-muted);
+      max-width: 820px;
+    }
+
+    section {
+      padding: 64px 6%;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    p {
+      color: var(--text-muted);
+      max-width: 880px;
+      margin-bottom: 16px;
+    }
+
+    ul {
+      margin-left: 18px;
+      margin-bottom: 16px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+      color: var(--text-muted);
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px;
+      margin-bottom: 32px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .badge-box {
+      border: 1px dashed var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      margin-top: 20px;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #7f8cff, #5f6bff);
+      color: #0f1115;
+      padding: 14px 24px;
+      border-radius: 12px;
+      display: inline-block;
+      font-weight: 500;
+      text-decoration: none;
+      margin-top: 20px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(127, 140, 255, 0.3);
+    }
+
+    /* ===== GLOBAL FOOTER ===== */
+    footer {
+      padding: 48px 6%;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: var(--text-muted);
+      margin-right: 20px;
+    }
+
+    footer a:hover {
+      color: var(--text-main);
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        margin-top: 14px;
+      }
+
+      header h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- GLOBAL NAV -->
+  <div id="header"></div>
+
+  <!-- PAGE HEADER -->
+  <header>
+    <h1>Organization Audit</h1>
+    <p>A comprehensive, leadership-level evaluation of whether the organization’s people, structure, and decision systems are genuinely capable of executing its strategy — now and at scale.</p>
+  </header>
+
+  <section>
+    <h2>Why Organizations Commission This Audit</h2>
+    <p>
+    Many organizations fail not because of strategy, funding, or market opportunity — but because execution capability does not match ambition.
+  </p>
+  <p>
+    The Organization Audit exists to surface structural weaknesses, leadership gaps, and systemic execution risks that remain invisible in standard reviews.
+  </p>
+  </section>
+
+  <section class="card">
+    <h2>This Audit Helps Leadership Answer</h2>
+    <ul>
+      <li>Is the organization structurally aligned with its stated vision and priorities?</li>
+    <li>Are leadership layers effective, accountable, and scalable?</li>
+    <li>Do current capabilities support near-term and long-term growth plans?</li>
+    <li>Where are systemic execution risks hidden across departments?</li>
+    <li>Is capital being amplified — or diluted — by workforce capability?</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Organizational Evaluation Areas</h2>
+    <ul>
+      <li>Leadership capability, depth, and succession readiness</li>
+    <li>Role clarity and hierarchy effectiveness</li>
+    <li>Decision-making authority and flow</li>
+    <li>Cross-team coordination and dependency health</li>
+    <li>Capability distribution across levels and functions</li>
+    <li>Execution discipline and reliability</li>
+    <li>Culture, ownership, and accountability signals</li>
+    <li>Future-readiness and scale risk</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Audit Structure</h2>
+    <div class="grid">
+      <div>
+      <p><strong>Scope:</strong> Organization-wide (custom defined)</p>
+      <p><strong>Approach:</strong> Integrated employee, team, and leadership evaluations</p>
+    </div>
+    <div>
+      <p><strong>Customization:</strong> Tailored to industry, size, maturity, and growth stage</p>
+      <p><strong>Engagement Type:</strong> Discussion-led, not packaged or standardized</p>
+    </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Audit Methodology</h2>
+    <ul>
+      <li>Pre-engagement understanding of organizational structure and goals</li>
+    <li>Custom audit framework design</li>
+    <li>Multi-level interviews across functions and hierarchies</li>
+    <li>Cross-functional correlation and pattern analysis</li>
+    <li>Independent scoring and synthesis using internal frameworks</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Deliverables</h2>
+    <ul>
+      <li>Organization-wide capability and execution assessment</li>
+    <li>Departmental and leadership-level insights</li>
+    <li>Identified systemic risks and structural gaps</li>
+    <li>Strategic, decision-oriented recommendations</li>
+    </ul>
+    <p>Organization Audit findings remain valid for <strong>12 months</strong>.</p>
+
+    <div class="badge-box">
+      <p><strong>VEXOR Organizational Rating</strong></p>
+      <p>
+      Organizations completing the full audit may be issued a VEXOR Rating (Grade A, B, or C),
+      representing overall execution readiness for the evaluated period.
+    </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Engagement & Governance Notes</h2>
+    <ul>
+      <li>This audit is conducted only as a customized engagement.</li>
+    <li>Mandatory professional discussion precedes scope and pricing.</li>
+    <li>Pricing is finalized post scope definition.</li>
+    <li>Travel, accommodation, food, and local transport for on-site audits are borne by the client.</li>
+    <li>Auditors do not disclose personal or professional background details.</li>
+    <li>Findings may influence restructuring, leadership changes, investment decisions, or workforce realignment.</li>
+    </ul>
+
+    <a href="request-discussion.html" class="cta">Request a Professional Evaluation Discussion</a>
+  </section>
+
+  <div id="footer"></div>
+
+  <script src="assets/js/include.js"></script>
+
+</body>
+</html>

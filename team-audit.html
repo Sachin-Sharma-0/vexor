@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Audit | VEXOR</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #0f1115;
+      --bg-card: #151821;
+      --text-main: #e6e6e6;
+      --text-muted: #9aa0aa;
+      --accent: #7f8cff;
+      --border: #232736;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* ===== GLOBAL HEADER ===== */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 6%;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    .nav-links a {
+      margin-left: 28px;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-main);
+    }
+
+    /* ===== PAGE HEADER ===== */
+    header {
+      padding: 60px 6% 40px;
+    }
+
+    header h1 {
+      font-size: 30px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: var(--text-muted);
+      max-width: 760px;
+    }
+
+    section {
+      padding: 64px 6%;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    p {
+      color: var(--text-muted);
+      max-width: 860px;
+      margin-bottom: 16px;
+    }
+
+    ul {
+      margin-left: 18px;
+      margin-bottom: 16px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+      color: var(--text-muted);
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px;
+      margin-bottom: 32px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #7f8cff, #5f6bff);
+      color: #0f1115;
+      padding: 14px 24px;
+      border-radius: 12px;
+      display: inline-block;
+      font-weight: 500;
+      text-decoration: none;
+      margin-top: 20px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(127, 140, 255, 0.3);
+    }
+
+    /* ===== GLOBAL FOOTER ===== */
+    footer {
+      padding: 48px 6%;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: var(--text-muted);
+      margin-right: 20px;
+    }
+
+    footer a:hover {
+      color: var(--text-main);
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        margin-top: 14px;
+      }
+
+      header h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- GLOBAL NAV -->
+  <div id="header"></div>
+
+  <!-- PAGE HEADER -->
+  <header>
+    <h1>Team Audit</h1>
+    <p>A structured evaluation of how a defined team functions in reality — measuring coordination, accountability, leadership flow, and execution reliability beyond individual performance.</p>
+  </header>
+
+  <section>
+    <h2>Why Organizations Conduct Team Audits</h2>
+    <p>
+    Teams often appear functional on the surface while silently underperforming beneath it.
+    Missed ownership, unclear leadership, and dependency failures rarely show up in individual reviews.
+  </p>
+  <p>
+    The Team Audit exists to expose these hidden execution risks before they turn into delivery failures or attrition.
+  </p>
+  </section>
+
+  <section class="card">
+    <h2>This Audit Helps Answer</h2>
+    <ul>
+      <li>Does the team operate as a cohesive unit or as isolated contributors?</li>
+    <li>Are responsibilities clearly owned and consistently executed?</li>
+    <li>Is leadership present, effective, and respected?</li>
+    <li>Do role mismatches exist within the team structure?</li>
+    <li>Can the team scale with increasing complexity and expectations?</li>
+    </ul>
+  </section>
+
+  <section>
+  <h2>Who This Is Typically For</h2>
+  <ul>
+    <li>Delivery-critical teams</li>
+    <li>Teams showing inconsistent output</li>
+    <li>Newly formed or recently restructured teams</li>
+    <li>Teams under leadership transition</li>
+    <li>High-cost teams with unclear performance impact</li>
+  </ul>
+</section>
+
+  <section class="card">
+    <h2>Team Evaluation Dimensions</h2>
+    <ul>
+      <li>Role clarity and accountability ownership</li>
+    <li>Inter-member dependency and collaboration health</li>
+    <li>Decision-making flow and authority clarity</li>
+    <li>Communication effectiveness</li>
+    <li>Conflict handling and resolution maturity</li>
+    <li>Leadership presence and influence</li>
+    <li>Execution discipline and reliability</li>
+    <li>Alignment with organizational direction</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Audit Structure</h2>
+    <div class="grid">
+      <div>
+      <p><strong>Team Size:</strong> Fixed at 6 members</p>
+      <p><strong>Interaction Model:</strong> Individual interviews with team-context analysis</p>
+    </div>
+    <div>
+      <p><strong>Assessment Focus:</strong> Individual contribution vs collective execution</p>
+      <p><strong>Customization:</strong> Based on team function and role composition</p>
+    </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Audit Methodology</h2>
+    <ul>
+      <li>Pre-audit understanding of team objectives and structure</li>
+    <li>Customized evaluation scenarios mapped to team roles</li>
+    <li>Independent interviews conducted confidentially</li>
+    <li>Cross-analysis of responses and observed patterns</li>
+    <li>Scoring using internal team-performance frameworks</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Deliverables</h2>
+    <ul>
+      <li>Team capability and execution overview</li>
+    <li>Role-wise contribution and dependency analysis</li>
+    <li>Identified structural and behavioral risks</li>
+    <li>Leadership and coordination insights</li>
+    <li>High-level corrective and optimization recommendations</li>
+    </ul>
+    <p>Audit findings remain valid for <strong>6 months</strong>.</p>
+  </section>
+
+  <section class="card">
+    <h2>Engagement & Conduct Guidelines</h2>
+    <ul>
+      <li>Team size is fixed at six members; variations can be discussed separately.</li>
+    <li>Travel, accommodation, food, and local transport for on-site audits are borne by the client.</li>
+    <li>Auditors do not disclose personal or professional background details.</li>
+    <li>Participants are expected to cooperate honestly and professionally.</li>
+    <li>Findings may influence restructuring, leadership changes, or role adjustments.</li>
+    </ul>
+
+    <a href="request-discussion.html" class="cta">Request a Professional Evaluation Discussion</a>
+  </section>
+
+  <div id="footer"></div>
+
+  <script src="assets/js/include.js"></script>
+
+</body>
+</html>

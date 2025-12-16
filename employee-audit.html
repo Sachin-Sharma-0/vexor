@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Audit | VEXOR</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #0f1115;
+      --bg-card: #151821;
+      --text-main: #e6e6e6;
+      --text-muted: #9aa0aa;
+      --accent: #7f8cff;
+      --border: #232736;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* ===== GLOBAL HEADER ===== */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 6%;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    .nav-links a {
+      margin-left: 28px;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-main);
+    }
+
+    /* ===== PAGE HEADER ===== */
+    header {
+      padding: 60px 6% 40px;
+    }
+
+    header h1 {
+      font-size: 30px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: var(--text-muted);
+      max-width: 720px;
+    }
+
+    section {
+      padding: 64px 6%;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    p {
+      color: var(--text-muted);
+      max-width: 820px;
+      margin-bottom: 16px;
+    }
+
+    ul {
+      margin-left: 18px;
+      margin-bottom: 16px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+      color: var(--text-muted);
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px;
+      margin-bottom: 32px;
+    }
+
+    .levels {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .level h3 {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #7f8cff, #5f6bff);
+      color: #0f1115;
+      padding: 14px 24px;
+      border-radius: 12px;
+      display: inline-block;
+      font-weight: 500;
+      text-decoration: none;
+      margin-top: 20px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(127, 140, 255, 0.3);
+    }
+
+    /* ===== GLOBAL FOOTER ===== */
+    footer {
+      padding: 48px 6%;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: var(--text-muted);
+      margin-right: 20px;
+    }
+
+    footer a:hover {
+      color: var(--text-main);
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        margin-top: 14px;
+      }
+
+      header h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- GLOBAL NAV -->
+  <div id="header"></div>
+
+  <!-- PAGE HEADER -->
+  <header>
+    <h1>Employee Audit</h1>
+    <p>A structured, independent evaluation to determine whether an employee genuinely fits their role — not by title or tenure, but by real capability, judgment, and future readiness.</p>
+  </header>
+
+  <section>
+    <h2>Why Organizations Use Employee Audits</h2>
+<p>
+    Organizations often operate with assumed competence. Over time, these assumptions become expensive.
+  </p>
+  <p>
+    The Employee Audit exists to replace assumptions with evidence — helping leadership make informed decisions about performance, growth, and risk.
+  </p>
+  </section>
+
+  <section class="card">
+    <h2>This Audit Helps Answer</h2>
+    <ul>
+      <li>Is this employee truly operating at the level the role requires?</li>
+    <li>Are capability gaps being masked by experience, tenure, or perception?</li>
+    <li>Is the employee equipped for upcoming organizational challenges?</li>
+    <li>Does their mindset align with leadership expectations and company direction?</li>
+    </ul>
+  </section>
+
+  <section>
+  <h2>Who This Is Typically For</h2>
+  <ul>
+    <li>Employees in critical or decision-impacting roles</li>
+    <li>High-cost or high-risk positions</li>
+    <li>Employees under consideration for promotion or role expansion</li>
+    <li>Roles where performance concerns are unclear or disputed</li>
+  </ul>
+  </section>
+
+  <section class="card">
+    <h2>Evaluation Dimensions</h2>
+    <ul>
+      <li>Role-specific technical competence</li>
+    <li>Domain and contextual understanding</li>
+    <li>Problem-solving and decision judgment</li>
+    <li>Ownership and accountability</li>
+    <li>Learning agility and adaptability</li>
+    <li>Communication clarity</li>
+    <li>Professional confidence and presence</li>
+    <li>Ethical reliability</li>
+    <li>Alignment with organizational priorities</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Audit Levels</h2>
+    <div class="levels">
+      <div class="level">
+        <h3>Basic Evaluation</h3>
+        <p>Core role suitability assessment covering essential capability indicators.</p>
+      </div>
+      <div class="level">
+        <h3>Standard Evaluation</h3>
+        <p>Expanded assessment including behavioral patterns and mindset indicators.</p>
+      </div>
+      <div class="level">
+        <h3>Advanced Evaluation</h3>
+        <p>Deep, multi-dimensional evaluation with future-readiness and risk indicators.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Audit Methodology</h2>
+    <ul>
+      <li>Pre-audit role and context analysis</li>
+    <li>Customized scenario-based evaluation</li>
+    <li>One-on-one audit interaction (on-site or virtual)</li>
+    <li>Independent scoring using standardized frameworks</li>
+    <li>Confidential reporting and summary insights</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Deliverables</h2>
+    <ul>
+      <li>Pre-audit role and context analysis</li>
+    <li>Customized scenario-based evaluation</li>
+    <li>One-on-one audit interaction (on-site or virtual)</li>
+    <li>Independent scoring using standardized frameworks</li>
+    <li>Confidential reporting and summary insights</li>
+    </ul>
+    <p>Audit findings remain valid for <strong>6 months</strong>.</p>
+  </section>
+
+  <section class="card">
+    <h2>Engagement & Conduct Guidelines</h2>
+    <ul>
+      <li>Travel, accommodation, food, and local transport for on-site audits are borne by the client.</li>
+    <li>Auditors do not disclose personal details due to firm policy.</li>
+    <li>Participants are expected to cooperate honestly and professionally.</li>
+    <li>Audit outcomes may influence appraisal, role change, transfer, or separation decisions.</li>
+    </ul>
+
+    <a href="request-discussion.html" class="cta">Request a Professional Evaluation Discussion</a>
+  </section>
+
+  <div id="footer"></div>
+<script src="assets/js/include.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Packages | VEXOR</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #0f1115;
+      --bg-card: #151821;
+      --text-main: #e6e6e6;
+      --text-muted: #9aa0aa;
+      --accent: #7f8cff;
+      --border: #232736;
+      --highlight: #1f2433;
+      --danger: #ff6b6b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 6%;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    .nav-links a {
+      margin-left: 28px;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-main);
+    }
+
+    header {
+      padding: 60px 6% 40px;
+    }
+
+    header h1 {
+      font-size: 30px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: var(--text-muted);
+      max-width: 900px;
+    }
+
+    section {
+      padding: 64px 6%;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    p {
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      max-width: 900px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+    }
+
+    .card.highlight {
+      border-color: var(--accent);
+      background: linear-gradient(180deg, var(--bg-card), var(--highlight));
+    }
+
+    .price {
+      font-size: 26px;
+      font-weight: 600;
+      margin: 16px 0;
+    }
+
+    .price span {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
+    ul {
+      margin-left: 18px;
+      margin-bottom: 20px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+      color: var(--text-muted);
+    }
+
+    .cta {
+      display: inline-block;
+      padding: 12px 22px;
+      background: linear-gradient(135deg, #7f8cff, #5f6bff);
+      color: #0f1115;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .note {
+      margin-top: 32px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .mandatory {
+      color: var(--danger);
+      font-size: 13px;
+      margin-top: 12px;
+    }
+
+    footer {
+      padding: 48px 6%;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: var(--text-muted);
+      margin-right: 20px;
+    }
+
+    footer a:hover {
+      color: var(--text-main);
+    }
+  </style>
+  <script src="assets/js/pricing.js"></script>
+</head>
+<body>
+
+<div id="header"></div>
+
+<header>
+  <h1>Engagement Packages</h1>
+  <p>
+    VEXOR packages define structured entry points into professional audits.
+    Final scope, depth, and commercial terms are confirmed only after evaluation discussion.
+  </p>
+</header>
+
+<!-- EMPLOYEE AUDIT -->
+<section>
+  <h2>Employee Audit</h2>
+  <p>Individual capability and role-alignment evaluation.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Basic</h3>
+      <div class="price">Indicative: <span style="font-size: 26px;font-weight: 600;color: var(--text-main);" data-price="employee.basic"></span> <span>/ employee</span></div>
+      <ul>
+        <li>~45 evaluation attributes</li>
+        <li>Role–skill alignment</li>
+        <li>Structured interview</li>
+        <li>Score-based assessment</li>
+      </ul>
+      <a href="request-discussion.html" class="cta">Request Discussion</a>
+    </div>
+
+    <div class="card">
+      <h3>Standard</h3>
+      <div class="price">Indicative: <span style="font-size: 26px;font-weight: 600;color: var(--text-main);" data-price="employee.standard"></span> <span class="price-unit">/ employee</span></div>
+      <ul>
+        <li>~85 evaluation attributes</li>
+        <li>Behavior & execution signals</li>
+        <li>Psychometric indicators</li>
+        <li>Expanded evaluator remarks</li>
+      </ul>
+      <a href="request-discussion.html" class="cta">Request Discussion</a>
+    </div>
+
+    <div class="card highlight">
+      <h3>Advanced</h3>
+      <div class="price">Indicative: <span style="font-size: 26px;font-weight: 600;color: var(--text-main);" data-price="employee.advanced"></span> <span class="price-unit">/ employee</span></div>
+      <ul>
+        <li>120+ evaluation attributes</li>
+        <li>Future-readiness analysis</li>
+        <li>Risk & growth indicators</li>
+        <li>Detailed evaluator notes</li>
+      </ul>
+      <a href="request-discussion.html" class="cta">Request Discussion</a>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM AUDIT -->
+<section>
+  <h2>Team Audit (6 Members)</h2>
+  <p>Capability and execution audit for intact working teams.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Team Core</h3>
+      <div class="price">Indicative: <span style="font-size: 26px;font-weight: 600;color: var(--text-main);" data-price="team.core"></span> <span class="price-unit">/ team</span></div>
+      <ul>
+        <li>Fixed team size: 6 members</li>
+        <li>Individual + team-level audit</li>
+        <li>Collaboration & delivery review</li>
+        <li>Team summary report</li>
+      </ul>
+      <a href="request-discussion.html" class="cta">Request Discussion</a>
+    </div>
+
+    <div class="card highlight">
+      <h3>Team Strategic</h3>
+      <div class="price">Indicative: <span style="font-size: 26px;font-weight: 600;color: var(--text-main);" data-price="team.strategic"></span> <span class="price-unit">/ team</span></div>
+      <ul>
+        <li>Advanced individual audits</li>
+        <li>Leadership & ownership signals</li>
+        <li>Execution bottleneck mapping</li>
+        <li>Actionable team recommendations</li>
+      </ul>
+      <a href="request-discussion.html" class="cta">Request Discussion</a>
+    </div>
+  </div>
+</section>
+
+<!-- ORGANIZATION AUDIT -->
+<section>
+  <h2>Organization Audit</h2>
+  <p>
+    Organization-wide audits are conducted only as customized engagements
+    based on size, structure, and strategic objectives.
+  </p>
+
+  <div class="card">
+    <ul>
+      <li>Leadership & structure evaluation</li>
+      <li>Cross-team capability analysis</li>
+      <li>Systemic risk identification</li>
+      <li>Strategic recommendations</li>
+      <li>Optional VEXOR Organizational Rating (A/B/C)</li>
+    </ul>
+
+    <p><strong>Pricing:</strong> Defined post evaluation discussion</p>
+    <p class="mandatory">
+      Mandatory professional discussion required before any organization-wide engagement.
+    </p>
+
+    <a href="request-discussion.html" class="cta">Request Discussion</a>
+  </div>
+
+  <p class="note">
+    * Prices are indicative. Final commercial terms depend on scope, depth, location,
+    and audit format. Travel, stay, food, and local transport are arranged by the client
+    for on-site engagements.
+  </p>
+</section>
+
+<div id="footer"></div>
+
+  <script src="assets/js/include.js"></script>
+  <script src="assets/js/pricing.js"></script>
+
+</body>
+</html>

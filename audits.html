@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audits | VEXOR</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #0f1115;
+      --bg-card: #151821;
+      --text-main: #e6e6e6;
+      --text-muted: #9aa0aa;
+      --accent: #7f8cff;
+      --border: #232736;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 6%;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    .nav-links a {
+      margin-left: 28px;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-main);
+    }
+
+    header {
+      padding: 60px 6% 40px;
+    }
+
+    header h1 {
+      font-size: 30px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    header p {
+      color: var(--text-muted);
+      max-width: 900px;
+    }
+
+    section {
+      padding: 64px 6%;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    p {
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      max-width: 900px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .card ul {
+      margin-left: 18px;
+      margin-bottom: 24px;
+    }
+
+    .card ul li {
+      margin-bottom: 8px;
+      color: var(--text-muted);
+    }
+
+    .cta {
+      align-self: flex-start;
+      padding: 12px 22px;
+      background: linear-gradient(135deg, #7f8cff, #5f6bff);
+      color: #0f1115;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer {
+      padding: 48px 6%;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: var(--text-muted);
+      margin-right: 20px;
+    }
+
+    footer a:hover {
+      color: var(--text-main);
+    }
+
+    .note {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 18px;
+    }
+  </style>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div id="header"></div>
+
+  <header>
+    <h1>Audit Engagements</h1>
+    <p>
+      VEXOR conducts independent capability and execution audits across individuals, teams, and organizations.
+    These audits are designed to surface risk, misalignment, and readiness gaps that are often invisible in growing systems.
+    </p>
+  </header>
+
+  <section>
+    <div class="grid">
+
+      <div class="card">
+        <h3>Employee Audit</h3>
+        <p>
+          Individual-level capability assessment to evaluate role alignment, execution ability, and future readiness.<br><br>
+          Designed to answer a single question: <strong>Is this individual actually fit for the role they occupy?</strong>
+        </p>
+        <ul>
+          <li>Role vs skill alignment assessment</li>
+          <li>Execution capability signals</li>
+          <li>Behavioral and ownership indicators</li>
+          <li>Future readiness & risk markers</li>
+        </ul>
+        <p class="note">
+          Best for critical roles, leadership tracks, or performance ambiguity.
+        </p>
+        <a href="employee-audit.html" class="cta">View Audit Structure</a>
+      </div>
+
+      <div class="card">
+        <h3>Team Audit</h3>
+        <p>
+          Evaluation of intact teams working toward shared objectives, focusing on collaboration and output effectiveness.<br><br>
+          Evaluates whether an intact team is functioning as a unit — or merely operating as individuals.
+        </p>
+        <ul>
+          <li>Individual capability + team dynamics</li>
+          <li>Leadership and decision ownership</li>
+          <li>Execution flow and bottleneck mapping</li>
+          <li>Collaboration vs dependency risk</li>
+        </ul>
+        <p class="note">
+          Recommended for delivery teams, departments, or strategic initiatives.
+        </p>
+        <a href="team-audit.html" class="cta">View Audit Structure</a>
+      </div>
+
+      <div class="card">
+        <h3>Organization Audit</h3>
+        <p>
+          Organization-wide assessment covering leadership depth, structural alignment, and systemic execution risk.<br><br>
+          A system-level evaluation designed to uncover structural, leadership, and execution risks across the organization.
+        </p>
+        <ul>
+          <li>Leadership depth and hierarchy stress</li>
+          <li>Cross-team capability distribution</li>
+          <li>Systemic execution and accountability gaps</li>
+          <li>Strategic readiness assessment</li>
+        </ul>
+        <p class="note">
+          Organization audits require mandatory discussion prior to engagement.
+        </p>
+        <a href="organization-audit.html" class="cta">Eligibility & Scope</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>How Engagements Typically Begin</h2>
+    <ul>
+      <li>Initial context review</li>
+      <li>Professional evaluation discussion (mandatory for organization audits)</li>
+      <li>Scope confirmation and audit planning</li>
+      <li>On-site or structured remote execution</li>
+    </ul><br>
+
+    <a href="request-discussion.html" class="cta">Request a Professional Discussion</a>
+  </section>
+
+  <div id="footer"></div>
+<script src="assets/js/include.js"></script>
+</body>
+</html>
