@@ -200,14 +200,42 @@ form textarea:focus {
   display:flex;
   align-items:flex-start;
   gap:12px;
-  margin-top:18px;
+  margin-top:20px;
   font-size:14px;
   color:var(--text-muted);
+  cursor: pointer;
 }
 
-.checkbox input {
-    
-  margin-right: 3px;
+/* Hide the default checkbox */
+.checkbox input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background-color: var(--bg-dark);
+  cursor: pointer;
+  flex-shrink: 0; /* Prevents shrinking */
+  margin-top: 2px;
+}
+
+/* Style the custom checkmark */
+.checkbox input[type="checkbox"]:checked::after {
+  content: '✔';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: var(--accent);
+}
+
+/* Style the border on focus */
+.checkbox input[type="checkbox"]:focus {
+  outline: none;
+  border-color: var(--accent);
 }
 
 .checkbox a {
@@ -412,7 +440,7 @@ button.cta.loading::after {
 
     <label class="checkbox">
         <input type="checkbox" name="orgAuthorityConfirmation">
-        I confirm that I am part of the decision-making authority or officially delegated for this request.
+        <span>I confirm that I am part of the decision-making authority or officially delegated for this request.</span>
     </label>
 
     </div>
@@ -457,12 +485,12 @@ button.cta.loading::after {
       <!-- Consent -->
       <label class="checkbox">
         <input type="checkbox" name="consent" required>
-        I acknowledge that this request is for professional evaluation only and does not constitute advisory or consulting services.
+        <span>I acknowledge that this request is for professional evaluation only and does not constitute advisory or consulting services.</span>
       </label>
 
       <label class="checkbox">
         <input type="checkbox" name="legalAgreement" required>
-        I have read and agree to the <a href="legal-guidelines.html" target="_blank">Legal Guidelines</a>, <a href="terms.html" target="_blank">Terms of Service</a>, and <a href="privacy-policy.html" target="_blank">Privacy Policy</a>.
+        <span>I have read and agree to the <a href="legal-guidelines.html" target="_blank">Legal Guidelines</a>, <a href="terms.html" target="_blank">Terms of Service</a>, and <a href="privacy-policy.html" target="_blank">Privacy Policy</a>.</span>
       </label>
 
       <div class="form-status success" id="formSuccess">
@@ -498,6 +526,7 @@ button.cta.loading::after {
   <div id="footer"></div>
 
   <script src="assets/js/include.js"></script>
+  <script src="assets/js/pricing.js"></script>
 
   <script>
     const auditType = document.getElementById('auditType');
