@@ -494,7 +494,7 @@ button.cta.loading::after {
       </label>
 
       <div class="form-status success" id="formSuccess">
-        Your request has been submitted. Our team will review it and respond if applicable.
+        Your request has been submitted. Redirecting to payment… (if selected).
         </div>
 
         <div class="form-status error" id="formError">
@@ -504,7 +504,7 @@ button.cta.loading::after {
 
       <!-- Submit -->
       <button type="submit" class="cta" id="submitBtn">Submit Request</button>
-      <div class="form-status success" id="successMsg">Request prepared. Redirecting…</div>
+      
       <p style="font-size:13px; color:var(--text-muted); margin-top:12px;">
         Written inquiries do not include scheduling or guaranteed response timelines.
       </p>
@@ -529,82 +529,77 @@ button.cta.loading::after {
   <script src="assets/js/pricing.js"></script>
 
   <script>
-    const auditType = document.getElementById('auditType');
-    const orgScope = document.getElementById('orgScope');
-    const discussionMode = document.getElementById('discussionMode');
-    const form = document.getElementById("discussionForm");
-    const submitBtn = document.getElementById("submitBtn");
-    const successMsg = document.getElementById("formSuccess");
-    const errorMsg = documentgetElementById("formError");
+  const auditType = document.getElementById('auditType');
+  const orgScope = document.getElementById('orgScope');
+  const discussionMode = document.getElementById('discussionMode');
+  const form = document.getElementById("discussionForm");
+  const submitBtn = document.getElementById("submitBtn");
+  const successMsg = document.getElementById("formSuccess");
+  const errorMsg = document.getElementById("formError");
 
-    auditType.addEventListener('change', () => {
-      orgScope.style.display = auditType.value === 'Organization Audit'
-        ? 'block'
-        : 'none';
-    });
-
-    function selectMode(mode) {
-      discussionMode.value = mode;
+  /* ===== Org Audit Toggle ===== */
+  auditType.addEventListener('change', () => {
+    if (auditType.value === 'Organization Audit') {
+      orgScope.style.display = 'block';
+    } else {
+      orgScope.style.display = 'none';
     }
+  });
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
+  /* ===== Auto-select discussion mode ===== */
+  function selectMode(mode) {
+    discussionMode.value = mode;
+  }
 
-      // UI loading state
-      submitBtn.classList.add("loading");
-      submitBtn.disabled = true;
-      successMsg.style.display = "none";
-      errorMsg.style.display = "none";
+  /* ===== Form Submit ===== */
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-      const formData = new FormData(form);
-      const mode = discussionMode.value;
+    const selectedMode = discussionMode.value; // capture BEFORE submit
 
-      fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-            'Accept': 'application/json'
+    submitBtn.classList.add("loading");
+    submitBtn.disabled = true;
+    successMsg.style.display = "none";
+    errorMsg.style.display = "none";
+
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: {
+        "Accept": "application/json"
+      }
+    })
+    .then(response => {
+      submitBtn.classList.remove("loading");
+      submitBtn.disabled = false;
+
+      if (!response.ok) throw new Error("Submission failed");
+
+      successMsg.style.display = "block";
+      successMsg.scrollIntoView({ behavior: "smooth", block: "center" });
+
+      // Redirect AFTER user feedback
+      setTimeout(() => {
+        if (selectedMode === "voice") {
+          window.location.href = "https://www.paypal.com/ncp/payment/S7KD4YHREZ7QW";
+        } else if (selectedMode === "video") {
+          window.location.href = "https://www.paypal.com/ncp/payment/PFKAPRSVC2BPA";
         }
-      }).then(response => {
-        submitBtn.classList.remove("loading");
-        submitBtn.disabled = false;
+      }, 1200);
 
-        if (response.ok) {
-          // Show success message
-          successMsg.style.display = "block";
-          successMsg.scrollIntoView({ behavior: "smooth", block: "center" });
-          form.reset();
-          orgScope.style.display = 'none'; // Hide org scope again
-
-          // Handle PayPal redirection after a short delay
-          setTimeout(() => {
-            if (mode === "voice") {
-              window.open("https://www.paypal.com/ncp/payment/S7KD4YHREZ7QW", "_blank");
-            }
-            if (mode === "video") {
-              window.open("https://www.paypal.com/ncp/payment/PFKAPRSVC2BPA", "_blank");
-            }
-          }, 500);
-        } else {
-          // Handle server errors
-          response.json().then(data => {
-            if (Object.hasOwn(data, 'errors')) {
-              errorMsg.textContent = data["errors"].map(error => error["message"]).join(", ");
-            } else {
-              errorMsg.textContent = "Something went wrong. Please try again later.";
-            }
-            errorMsg.style.display = "block";
-          })
-        }
-      }).catch(error => {
-        // Handle network errors
-        submitBtn.classList.remove("loading");
-        submitBtn.disabled = false;
-        errorMsg.textContent = "Something went wrong. Please try again later.";
-        errorMsg.style.display = "block";
-      });
+      form.reset();
+      orgScope.style.display = "none";
+    })
+    .catch(() => {
+      submitBtn.classList.remove("loading");
+      submitBtn.disabled = false;
+      errorMsg.style.display = "block";
     });
-  </script>
+  });
+</script>
+
 <script src="assets/js/pricing.js"></script>
 
 
