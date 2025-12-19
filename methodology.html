@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Methodology | VEXOR</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #0f1115;
+      --bg-card: #151821;
+      --text-main: #e6e6e6;
+      --text-muted: #9aa0aa;
+      --accent: #7f8cff;
+      --border: #232736;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.7;
+    }
+
+    header, section {
+      padding: 60px 6%;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 30px;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: var(--text-muted);
+      max-width: 900px;
+      margin-bottom: 14px;
+    }
+
+    ul {
+      margin-left: 18px;
+      margin-bottom: 14px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+      color: var(--text-muted);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 6%;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    .nav-links a {
+      margin-left: 28px;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-main);
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 32px;
+    }
+
+    .note {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 16px;
+    }
+
+    hr.divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    footer {
+      padding: 48px 6%;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: var(--text-muted);
+      margin-right: 20px;
+    }
+
+    footer a:hover {
+      color: var(--text-main);
+    }
+  </style>
+</head>
+<body>
+
+<div id="header"></div>
+
+<header>
+  <div class="container">
+    <h1>Audit Methodology</h1>
+    <p>
+      VEXOR follows a structured, evidence-driven audit methodology designed to surface capability, execution, and readiness risks.
+      The methodology prioritizes observation and validation over opinion or advisory judgment.
+    </p>
+    <p>
+      This page outlines how audits are conducted — without disclosing proprietary tools or internal scoring mechanisms.
+    </p>
+  </div>
+</header>
+
+<hr class="divider">
+
+<section>
+  <div class="container">
+    <h2>Methodological Principles</h2>
+
+    <div class="card">
+      <ul>
+        <li><strong>Evaluation over advice:</strong> Audits focus on what exists, not what should be done.</li>
+        <li><strong>Evidence before interpretation:</strong> Observations are grounded in verifiable signals.</li>
+        <li><strong>Multiple signal validation:</strong> No single data point drives conclusions.</li>
+        <li><strong>Independence:</strong> VEXOR does not participate in implementation or decision execution.</li>
+        <li><strong>Context awareness:</strong> Capability is assessed relative to role, scale, and operating environment.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section>
+  <div class="container">
+    <h2>Audit Phases</h2>
+
+    <div class="card">
+      <h3>1. Context & Scope Definition</h3>
+      <p>
+        Each audit begins with scope clarification to establish boundaries, intent, and evaluation criteria.
+        This phase ensures the audit remains evaluative and does not drift into advisory territory.
+      </p>
+      <ul>
+        <li>Role, team, or system boundary definition</li>
+        <li>Operating context review</li>
+        <li>Risk areas and focus zones identification</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>2. Signal Collection</h3>
+      <p>
+        Audits rely on structured signal collection rather than self-reported performance claims.
+      </p>
+      <ul>
+        <li>Behavioral indicators</li>
+        <li>Decision ownership patterns</li>
+        <li>Execution artifacts and outputs</li>
+        <li>Interaction and dependency signals</li>
+      </ul>
+      <p class="note">
+        Tools and instruments vary by audit type and are selected based on relevance, not standardization.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>3. Triangulation & Validation</h3>
+      <p>
+        Observations are validated by cross-referencing multiple independent signals to reduce bias and false conclusions.
+      </p>
+      <ul>
+        <li>Cross-role consistency checks</li>
+        <li>Declared vs observed behavior comparison</li>
+        <li>Output vs accountability alignment</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>4. Risk & Readiness Assessment</h3>
+      <p>
+        Findings are framed in terms of risk exposure and readiness rather than performance ratings.
+      </p>
+      <ul>
+        <li>Capability gaps</li>
+        <li>Execution bottlenecks</li>
+        <li>Structural or leadership stress points</li>
+        <li>Future scalability risks</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>5. Reporting</h3>
+      <p>
+        Audit outputs present factual observations and risk indicators without prescriptive recommendations.
+      </p>
+      <ul>
+        <li>Documented findings</li>
+        <li>Observed patterns and inconsistencies</li>
+        <li>Risk exposure summaries</li>
+      </ul>
+      <p class="note">
+        Decisions, actions, and implementations remain the responsibility of leadership.
+      </p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section>
+  <div class="container">
+    <h2>What This Methodology Does Not Do</h2>
+
+    <div class="card">
+      <ul>
+        <li>Does not provide coaching, consulting, or implementation plans</li>
+        <li>Does not guarantee outcomes or business results</li>
+        <li>Does not replace leadership judgment or accountability</li>
+        <li>Does not function as a performance appraisal system</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section>
+  <div class="container">
+    <h2>Applicability Across Audit Types</h2>
+    <p>
+      While the core methodology remains consistent, execution depth and signal selection vary across employee, team, and organization audits.
+    </p>
+    <p class="note">
+      Organization-wide audits require mandatory pre-engagement discussion due to scale and systemic impact.
+    </p>
+  </div>
+</section>
+
+<div id="footer"></div>
+<script src="assets/js/include.js"></script>
+
+</body>
+</html>

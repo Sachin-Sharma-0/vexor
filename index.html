@@ -9,6 +9,43 @@
   <title>VEXOR | Workforce Audit & Organizational Readiness</title>
   <meta name="description" content="VEXOR conducts independent employee, team, and organization audits to evaluate workforce readiness, role alignment, and execution risk." />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .section-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(127, 140, 255, 0.35),
+    transparent
+  );
+  margin: 80px 0;
+}
+
+
+.metric-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.metric-card strong {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.metric-card span {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+
+  </style>
 </head>
 <body>
 
@@ -26,15 +63,29 @@
         VEXOR is an independent workforce audit firm evaluating whether employees, teams,
         and organizations are truly aligned with their roles, responsibilities, and future demands.
       </p>
+      <p>
+        Independent evaluations focused on execution risk, role misalignment, and workforce readiness — before these issues surface as business failures.
+      </p>
       <div class="hero-actions">
         <a href="audits.html" class="btn primary">Explore Audits</a>
         <a href="request-discussion.html" class="btn secondary">Request Professional Discussion</a>
       </div>
     </div>
     <div class="hero-visual">
-      <div class="metric-card">Role–Skill Gaps</div>
-      <div class="metric-card">Execution Readiness</div>
-      <div class="metric-card">People Risk Index</div>
+      <div class="metric-card">
+    <strong>Role–Skill Gaps</strong>
+    <span>Unverified capability mismatches</span>
+  </div>
+
+  <div class="metric-card">
+    <strong>Execution Readiness</strong>
+    <span>Ability to deliver under real conditions</span>
+  </div>
+
+  <div class="metric-card">
+    <strong>People Risk Index</strong>
+    <span>Hidden dependency and failure exposure</span>
+  </div>
     </div>
   </div>
 </section>
@@ -89,6 +140,49 @@
     </div>
   </div>
 </section>
+<hr class="section-divider">
+
+
+<section class="audience">
+  <div class="container narrow">
+    <h2>Who This Is For</h2>
+
+    <p>
+      VEXOR works with decision-makers who require objective clarity before making
+      people, structure, or leadership decisions.
+    </p>
+
+    <ul class="value-points">
+      <li>Founders and senior leadership</li>
+      <li>HR and talent heads responsible for outcomes</li>
+      <li>Institutions and organizations facing scale or transition</li>
+    </ul>
+
+    <h3 style="margin-top:32px;">Who This Is Not For</h3>
+
+    <ul class="value-points">
+      <li>Resume screening or hiring shortcuts</li>
+      <li>Coaching, training, or performance improvement programs</li>
+      <li>Quick advice or informal consultations</li>
+    </ul>
+  </div>
+</section>
+<hr class="section-divider">
+
+
+<section class="positioning">
+  <div class="container narrow">
+    <h2>What VEXOR Is Not</h2>
+    <ul class="value-points">
+      <li>Not a hiring platform or assessment tool</li>
+      <li>Not a training or coaching provider</li>
+      <li>Not advisory or consulting disguised as audits</li>
+      <li>Not outcome guarantees or performance promises</li>
+    </ul>
+  </div>
+</section>
+
+
 
 <!-- Value Explanation -->
 
@@ -108,16 +202,51 @@
   </div>
 </section>
 
+<section class="economic-risk">
+  <div class="container narrow">
+    <h2>The Hidden Cost of Capability Mismatch</h2>
+
+    <p>
+      Workforce risk rarely appears as a single failure. It accumulates quietly through
+      delayed execution, rework, missed decisions, and dependency on a few individuals.
+    </p>
+
+    <p>
+      Consider a simplified illustration:
+    </p>
+
+    <ul class="value-points">
+      <li>An employee with a monthly cost of ₹1,50,000 (salary, benefits, overhead)</li>
+      <li>Operating at 60–70% effective role alignment</li>
+      <li>Creates an estimated inefficiency cost of ₹45,000–₹60,000 per month</li>
+    </ul>
+
+    <p class="value-note">
+      This is not a claim of loss, but a conservative illustration of how misalignment,
+      skill gaps, and unclear accountability translate into economic drag over time.
+    </p>
+
+    <p class="value-note">
+      At scale, these risks compound across teams and leadership layers — often remaining
+      invisible until outcomes are already affected.
+    </p>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+
+
 <!-- Engagement Model -->
 
 <section class="engagement">
   <div class="container">
     <h2>How Engagement Works</h2>
     <div class="steps">
-      <div class="step">1. Request a professional discussion</div>
-      <div class="step">2. Scope definition and audit design</div>
-      <div class="step">3. On-site or virtual audit execution</div>
-      <div class="step">4. Structured reporting and findings delivery</div>
+      <div class="step">1. Submit a written request or opt for a live professional discussion</div>
+      <div class="step">2. Request review and suitability assessment</div>
+      <div class="step">3. Scope definition and audit feasibility</div>
+      <div class="step">4. Structured audit execution and findings delivery</div>
     </div>
   </div>
 </section>
@@ -132,6 +261,10 @@
       and outcomes are taken seriously.
     </p>
     <a href="request-discussion.html" class="btn primary large">Request Professional Discussion</a>
+    <p style="font-size:13px; color:var(--text-muted); margin-top:12px;">
+  Written requests are reviewed without obligation. Live discussions are paid and limited.
+</p>
+
   </div>
 </section>
 

@@ -93,6 +93,12 @@
       max-width: 900px;
     }
 
+    .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
     .card {
       background: var(--bg-card);
       border: 1px solid var(--border);
@@ -315,8 +321,10 @@ button.cta.loading::after {
     <h1>Request a Professional Evaluation Discussion</h1>
     <p>
       This discussion is designed for decision-makers who want clarity before engaging VEXOR for an audit. It is not a sales call. 
-      <br>Submit a structured request to determine audit suitability, scope, and next steps.
-    Written requests are free. Live discussions are paid.
+      <br>Submit a structured request to determine audit suitability, scope, and next steps.<br>
+    Written requests are reviewed asynchronously at no charge.<br>  
+Live discussions are paid and scheduled only after payment confirmation.
+
     </p>
   </header>
 
@@ -332,6 +340,10 @@ button.cta.loading::after {
 
   <section>
     <h2>Available Discussion Options</h2>
+    <p style="max-width:900px;">
+  Choose the interaction format that best fits the level of clarity you require before deciding on an audit engagement.
+</p>
+
     <div class="grid">
       <div class="card">
         <h3>Voice Discussion</h3>
@@ -359,10 +371,14 @@ button.cta.loading::after {
     <div class="warning">
       <strong>Important:</strong> Payment is required to schedule this discussion. This fee is for professional evaluation time and does not guarantee engagement.
     </div>
-    <p class="warning">Payment is processed in USD via PayPal.</p>
+<p style="font-size:13px; color:var(--text-muted); margin-top:10px;">
+  Payments are processed securely via PayPal, Debit Card, Credit Card in USD.
+</p>
   </section>
 
-  <section class="card">
+  <section>
+    <div class="container">
+      <div class="card">
     <h2>Engagement Guidelines</h2>
     <ul>
       <li>This discussion is not a consultation or advisory service</li>
@@ -370,7 +386,23 @@ button.cta.loading::after {
       <li>Respectful and honest communication is expected</li>
       <li>Discussions may influence audit eligibility</li>
     </ul>
+      </div>
+    </div>
   </section>
+
+  <section>
+    <div class="container">
+      <div class="card">
+  <h2>Who This Is For</h2>
+  <ul>
+    <li>Founders, CXOs, and senior leadership</li>
+    <li>Decision-makers evaluating people or structure risk</li>
+    <li>Organizations seeking independent assessment, not validation</li>
+  </ul>
+      </div>
+    </div>
+  </section>
+
 
   <section id="discussion-form">
   <h2>Submit Your Request</h2>
@@ -437,6 +469,10 @@ button.cta.loading::after {
         <option>3 – 6 months</option>
         <option>Exploratory</option>
     </select>
+    <p style="font-size:13px; color:var(--text-muted); margin-bottom:8px;">
+  Organization-wide audits require executive-level sponsorship or delegated authority.
+</p>
+
 
     <label class="checkbox">
         <input type="checkbox" name="orgAuthorityConfirmation">
@@ -450,13 +486,18 @@ button.cta.loading::after {
       <label>Discussion Mode *</label>
       <select required id="discussionMode" name="discussionMode">
         <option value="">Select discussion type</option>
+        <option value="written">Written Inquiry (No scheduling)</option>
         <option value="voice">Paid Voice Discussion (20 mins)</option>
         <option value="video">Paid Video Discussion (30 mins)</option>
-        <option value="written">Written Inquiry (No scheduling)</option>
+        
       </select>
       <p style="font-size:13px; color:var(--text-muted); margin-top:6px;">
   Written requests are reviewed asynchronously. Paid discussions allow real-time clarification and faster alignment.
 </p>
+<p style="font-size:12px; color:var(--text-muted); margin-top:4px;">
+  Written inquiries may receive clarifying questions but do not include meetings or guaranteed response timelines.
+</p>
+
 
 
       <!-- Identity -->

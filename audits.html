@@ -90,8 +90,26 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 28px;
+      gap: 32px;
     }
+
+    .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(127, 140, 255, 0.35),
+    transparent
+  );
+  margin: 80px 0;
+}
+
 
     .card {
       background: var(--bg-card);
@@ -168,9 +186,14 @@
       VEXOR conducts independent capability and execution audits across individuals, teams, and organizations.
     These audits are designed to surface risk, misalignment, and readiness gaps that are often invisible in growing systems.
     </p>
+    <p>
+  Audits focus on observation and evaluation — not advisory, coaching, or implementation.
+</p>
+
   </header>
 
   <section>
+    <div class="container">
     <div class="grid">
 
       <div class="card">
@@ -188,15 +211,16 @@
         <p class="note">
           Best for critical roles, leadership tracks, or performance ambiguity.
         </p>
-        <a href="employee-audit.html" class="cta">View Audit Structure</a>
+        <a href="employee-audit.html" class="cta">Scope & Structure</a>
       </div>
 
       <div class="card">
         <h3>Team Audit</h3>
         <p>
           Evaluation of intact teams working toward shared objectives, focusing on collaboration and output effectiveness.<br><br>
-          Evaluates whether an intact team is functioning as a unit — or merely operating as individuals.
-        </p>
+          Evaluates whether an intact team is functioning as a unit — or merely operating as individuals.<br><strong>Is this team actually producing outcomes — or just activity?</strong>
+
+        </p><br>
         <ul>
           <li>Individual capability + team dynamics</li>
           <li>Leadership and decision ownership</li>
@@ -206,15 +230,16 @@
         <p class="note">
           Recommended for delivery teams, departments, or strategic initiatives.
         </p>
-        <a href="team-audit.html" class="cta">View Audit Structure</a>
+        <a href="team-audit.html" class="cta">Scope & Structure</a>
       </div>
 
       <div class="card">
         <h3>Organization Audit</h3>
         <p>
           Organization-wide assessment covering leadership depth, structural alignment, and systemic execution risk.<br><br>
-          A system-level evaluation designed to uncover structural, leadership, and execution risks across the organization.
-        </p>
+          A system-level evaluation designed to uncover structural, leadership, and execution risks across the organization.<br><strong>Is the organization structurally capable of executing its strategy?</strong>
+
+        </p><br>
         <ul>
           <li>Leadership depth and hierarchy stress</li>
           <li>Cross-team capability distribution</li>
@@ -228,9 +253,12 @@
       </div>
 
     </div>
+    </div>
   </section>
+<hr class="section-divider">
 
   <section>
+    <div class="container">
     <h2>How Engagements Typically Begin</h2>
     <ul>
       <li>Initial context review</li>
@@ -238,8 +266,13 @@
       <li>Scope confirmation and audit planning</li>
       <li>On-site or structured remote execution</li>
     </ul><br>
+    <p class="note">
+  Engagements begin only after alignment on scope, intent, and audit boundaries.
+</p>
+
 
     <a href="request-discussion.html" class="cta">Request a Professional Discussion</a>
+    </div>
   </section>
 
   <div id="footer"></div>
