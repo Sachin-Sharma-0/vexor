@@ -129,6 +129,12 @@ li {
       font-size: 20px;
       font-weight: 600;
       letter-spacing: 2px;
+      color: var(--text-primary);
+    }
+
+    .logo:hover {
+      text-decoration: none;
+      color: var(--text-primary);
     }
 
     .nav-links a {
