@@ -37,7 +37,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   background: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-main);
@@ -79,7 +80,10 @@ section {
 /* ------------------
    Typography
 ------------------ */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-heading);
   letter-spacing: -0.02em;
 }
@@ -117,38 +121,38 @@ li {
    Header & Navigation
 ------------------ */
 /* ===== GLOBAL HEADER ===== */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 28px 6%;
-      border-bottom: 1px solid var(--border);
-    }
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 6%;
+  border-bottom: 1px solid var(--border);
+}
 
-    .logo {
-      font-size: 20px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      color: var(--text-primary);
-    }
+.logo {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--text-primary);
+}
 
-    .logo:hover {
-      text-decoration: none;
-      color: var(--text-primary);
-    }
+.logo:hover {
+  text-decoration: none;
+  color: var(--text-primary);
+}
 
-    .nav-links a {
-      margin-left: 28px;
-      text-decoration: none;
-      color: var(--text-muted);
-      font-size: 14px;
-      transition: color 0.2s ease;
-    }
+.nav-links a {
+  margin-left: 28px;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
 
-    .nav-links a:hover {
-      color: var(--text-main);
-      text-decoration: none;
-    }
+.nav-links a:hover {
+  color: var(--text-primary);
+  text-decoration: none;
+}
 
 .site-header {
   position: sticky;
@@ -229,25 +233,34 @@ li {
 Animations
 ------------------ */
 @keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(24px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 
 .reveal {
-    opacity: 0;
-    animation: fadeUp 0.9s ease forwards;
-    }
+  opacity: 0;
+  animation: fadeUp 0.9s ease forwards;
+}
 
-.reveal.delay-1 { animation-delay: 0.15s; }
-.reveal.delay-2 { animation-delay: 0.3s; }
-.reveal.delay-3 { animation-delay: 0.45s; }
+.reveal.delay-1 {
+  animation-delay: 0.15s;
+}
+
+.reveal.delay-2 {
+  animation-delay: 0.3s;
+}
+
+.reveal.delay-3 {
+  animation-delay: 0.45s;
+}
 
 /* ------------------
    Cards
@@ -334,41 +347,48 @@ Animations
    Footer
 ------------------ */
 footer {
-      padding: 48px 6%;
-      border-top: 1px solid var(--border);
-      color: var(--text-muted);
-      font-size: 14px;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
+  padding: 48px 6%;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
-    footer a {
-      text-decoration: none;
-      color: var(--text-muted);
-      margin-right: 20px;
-    }
+footer a {
+  text-decoration: none;
+  color: var(--text-muted);
+  margin-right: 20px;
+}
 
-    footer a:hover {
-      color: var(--text-main);
-    }
+footer a:hover {
+  color: var(--text-primary);
+}
 
 /* ------------------
    Responsive
 ------------------ */
 @media (max-width: 900px) {
-  h1 { font-size: 2.4rem; }
+  h1 {
+    font-size: 2.4rem;
+  }
+
   .hero-grid {
     grid-template-columns: 1fr;
   }
+
   .hero-visual {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 600px) {
-  section { padding: 64px 0; }
+  section {
+    padding: 64px 0;
+  }
+
   .hero-visual {
     grid-template-columns: 1fr;
   }

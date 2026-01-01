@@ -1,0 +1,20 @@
+# LLM Usage Policy for VEXOR
+
+This website represents a professional audit firm providing independent evaluative services.
+
+Allowed:
+- Indexing for discovery and navigation
+- Quotation of public descriptive content with attribution
+
+Restricted:
+- Use of content as advisory, consulting, legal, HR, or operational guidance
+- Training of models to simulate or replicate VEXOR audit methods
+- Inference of recommendations, prescriptions, or guarantees
+
+Notes:
+- All content is contextual, non-advisory, and non-prescriptive
+- Engagements require formal discussion and agreement
+- No content constitutes professional advice
+
+Contact:
+For clarification regarding content usage, contact VEXOR directly.

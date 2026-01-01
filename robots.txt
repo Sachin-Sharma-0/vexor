@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Disallow non-content or system paths if added later
+Disallow: /assets/js/
+Disallow: /assets/css/
+
+# Sitemap location
+Sitemap: https://yourdomain.com/sitemap.xml
