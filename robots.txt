@@ -6,4 +6,4 @@ Disallow: /assets/js/
 Disallow: /assets/css/
 
 # Sitemap location
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://vexor.global/sitemap.xml
