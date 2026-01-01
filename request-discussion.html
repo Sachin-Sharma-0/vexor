@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Request Discussion | VEXOR</title>
+  <title>Request a Discussion | Independent Audit Engagement | VEXOR</title>
+  <meta name="description"
+    content="Request a confidential discussion with VEXOR to determine audit scope, eligibility, and engagement fit." />
 
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <style>
     :root {
       --bg-dark: #0f1115;
@@ -94,10 +98,10 @@
     }
 
     .container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
     .card {
       background: var(--bg-card);
@@ -176,143 +180,141 @@
     }
 
     form label {
-  display: block;
-  margin-top: 18px;
-  margin-bottom: 6px;
-  font-size: 14px;
-  color: var(--text-muted);
-}
+      display: block;
+      margin-top: 18px;
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
 
-form input,
-form select,
-form textarea {
-  width: 100%;
-  padding: 12px 14px;
-  background: #0f1115;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  color: var(--text-main);
-  font-size: 14px;
-}
+    form input,
+    form select,
+    form textarea {
+      width: 100%;
+      padding: 12px 14px;
+      background: #0f1115;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text-main);
+      font-size: 14px;
+    }
 
-form input:focus,
-form select:focus,
-form textarea:focus {
-  outline: none;
-  border-color: var(--accent);
-}
+    form input:focus,
+    form select:focus,
+    form textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
 
-.checkbox{
-  display:flex;
-  align-items:flex-start;
-  gap:12px;
-  margin-top:20px;
-  font-size:14px;
-  color:var(--text-muted);
-  cursor: pointer;
-}
+    .checkbox {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 20px;
+      font-size: 14px;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
 
-/* Hide the default checkbox */
-.checkbox input[type="checkbox"] {
-  appearance: none;
-  -webkit-appearance: none;
-  position: relative;
-  width: 18px;
-  height: 18px;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  background-color: var(--bg-dark);
-  cursor: pointer;
-  flex-shrink: 0; /* Prevents shrinking */
-  margin-top: 2px;
-}
+    /* Hide the default checkbox */
+    .checkbox input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      position: relative;
+      width: 18px;
+      height: 18px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background-color: var(--bg-dark);
+      cursor: pointer;
+      flex-shrink: 0;
+      /* Prevents shrinking */
+      margin-top: 2px;
+    }
 
-/* Style the custom checkmark */
-.checkbox input[type="checkbox"]:checked::after {
-  content: '✔';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 14px;
-  color: var(--accent);
-}
+    /* Style the custom checkmark */
+    .checkbox input[type="checkbox"]:checked::after {
+      content: '✔';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 14px;
+      color: var(--accent);
+    }
 
-/* Style the border on focus */
-.checkbox input[type="checkbox"]:focus {
-  outline: none;
-  border-color: var(--accent);
-}
+    /* Style the border on focus */
+    .checkbox input[type="checkbox"]:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
 
-.checkbox a {
-  color: var(--accent);
-  text-decoration: none;
-}
+    .checkbox a {
+      color: var(--accent);
+      text-decoration: none;
+    }
 
-.checkbox a:hover {
-  text-decoration: underline;
-}
+    .checkbox a:hover {
+      text-decoration: underline;
+    }
 
-button.cta {
-  margin-top: 24px;
-  border: none;
-  cursor: pointer;
-}
+    button.cta {
+      margin-top: 24px;
+      border: none;
+      cursor: pointer;
+    }
 
-.org-scope {
-  margin-top: 28px;
-  padding-top: 24px;
-  border-top: 1px dashed var(--border);
-}
+    .org-scope {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px dashed var(--border);
+    }
 
-#orgScope {
-  display: none;
-}
+    #orgScope {
+      display: none;
+    }
 
-/* ===== FORM FEEDBACK ===== */
+    /* ===== FORM FEEDBACK ===== */
 
-.form-status {
-  margin-top: 16px;
-  padding: 14px 16px;
-  border-radius: 10px;
-  font-size: 14px;
-  display: none;
-}
+    .form-status {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 10px;
+      font-size: 14px;
+      display: none;
+    }
 
-.form-status.success {
-  background: rgba(127, 140, 255, 0.12);
-  border: 1px solid var(--accent);
-  color: var(--text-main);
-}
+    .form-status.success {
+      background: rgba(127, 140, 255, 0.12);
+      border: 1px solid var(--accent);
+      color: var(--text-main);
+    }
 
-.form-status.error {
-  background: rgba(255, 107, 107, 0.12);
-  border: 1px solid var(--danger);
-  color: var(--text-main);
-}
+    .form-status.error {
+      background: rgba(255, 107, 107, 0.12);
+      border: 1px solid var(--danger);
+      color: var(--text-main);
+    }
 
-button.cta.loading {
-  opacity: 0.7;
-  pointer-events: none;
-}
+    button.cta.loading {
+      opacity: 0.7;
+      pointer-events: none;
+    }
 
-button.cta.loading::after {
-  content: " Submitting...";
-  font-weight: 400;
-}
+    button.cta.loading::after {
+      content: " Submitting...";
+      font-weight: 400;
+    }
 
-/* Smooth org section reveal */
-.org-scope {
-  transition: all 0.3s ease;
-}
-
-
-
-
+    /* Smooth org section reveal */
+    .org-scope {
+      transition: all 0.3s ease;
+    }
   </style>
   <script src="assets/js/pricing.js"></script>
 
 </head>
+
 <body>
 
   <div id="header"></div>
@@ -321,16 +323,16 @@ button.cta.loading::after {
     <h1>Request a Professional Audit Discussion</h1>
     <p>
       This discussion is designed for decision-makers who want clarity before engaging VEXOR for an audit engagement.
- It is not a sales call. 
+      It is not a sales call.
       <br>Submit a structured request to determine audit suitability, scope, and next steps.<br>
-    Written requests are reviewed asynchronously at no charge.<br>  
-Live discussions are paid and scheduled only after payment confirmation.
+      Written requests are reviewed asynchronously at no charge.<br>
+      Live discussions are paid and scheduled only after payment confirmation.
 
     </p>
     <p class="note">
-  Discussions are limited to engagement qualification, scope alignment,
-  and risk context. No recommendations, advice, or solutions are provided.
-</p>
+      Discussions are limited to engagement qualification, scope alignment,
+      and risk context. No recommendations, advice, or solutions are provided.
+    </p>
 
   </header>
 
@@ -347,13 +349,15 @@ Live discussions are paid and scheduled only after payment confirmation.
   <section>
     <h2>Available Discussion Options</h2>
     <p style="max-width:900px;">
-  Choose the interaction format that best fits the level of clarity you require before deciding on an audit engagement.
-</p>
+      Choose the interaction format that best fits the level of clarity you require before deciding on an audit
+      engagement.
+    </p>
 
     <div class="grid">
       <div class="card">
         <h3>Voice Discussion</h3>
-        <div class="price"><span style="font-size: 26px;font-weight: 600;color: var(--text-main);" data-price="discussion.voice"></span> <span>/ 20 minutes</span></div>
+        <div class="price"><span style="font-size: 26px;font-weight: 600;color: var(--text-main);"
+            data-price="discussion.voice"></span> <span>/ 20 minutes</span></div>
         <ul>
           <li>Audio-only discussion</li>
           <li>High-level guidance</li>
@@ -364,7 +368,8 @@ Live discussions are paid and scheduled only after payment confirmation.
 
       <div class="card">
         <h3>Video Discussion</h3>
-        <div class="price"><span style="font-size: 26px;font-weight: 600;color: var(--text-main);" data-price="discussion.video"></span> <span>/ 30 minutes</span></div>
+        <div class="price"><span style="font-size: 26px;font-weight: 600;color: var(--text-main);"
+            data-price="discussion.video"></span> <span>/ 30 minutes</span></div>
         <ul>
           <li>Video-based professional discussion</li>
           <li>Deeper engagement</li>
@@ -376,24 +381,24 @@ Live discussions are paid and scheduled only after payment confirmation.
 
     <div class="warning">
       <strong>Important:</strong> Payment is required to schedule this discussion.
-This fee covers professional time for audit qualification and scope assessment
-and does not guarantee engagement.
+      This fee covers professional time for audit qualification and scope assessment
+      and does not guarantee engagement.
     </div>
-<p style="font-size:13px; color:var(--text-muted); margin-top:10px;">
-  Payments are processed securely via PayPal, Debit Card, Credit Card in USD.
-</p>
+    <p style="font-size:13px; color:var(--text-muted); margin-top:10px;">
+      Payments are processed securely via PayPal, Debit Card, Credit Card in USD.
+    </p>
   </section>
 
   <section>
     <div class="container">
       <div class="card">
-    <h2>Engagement Guidelines</h2>
-    <ul>
-      <li>This discussion is not a consultation, advisory, or problem-solving session</li>
-      <li>No reports or written outputs are provided</li>
-      <li>Respectful and honest communication is expected</li>
-      <li>Discussions may influence audit eligibility</li>
-    </ul>
+        <h2>Engagement Guidelines</h2>
+        <ul>
+          <li>This discussion is not a consultation, advisory, or problem-solving session</li>
+          <li>No reports or written outputs are provided</li>
+          <li>Respectful and honest communication is expected</li>
+          <li>Discussions may influence audit eligibility</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -401,168 +406,173 @@ and does not guarantee engagement.
   <section>
     <div class="container">
       <div class="card">
-  <h2>Who This Is For</h2>
-  <ul>
-    <li>Founders, CXOs, and senior leadership</li>
-    <li>Decision-makers evaluating people or structure risk</li>
-    <li>Organizations seeking independent assessment, not validation</li>
-  </ul>
+        <h2>Who This Is For</h2>
+        <ul>
+          <li>Founders, CXOs, and senior leadership</li>
+          <li>Decision-makers evaluating people or structure risk</li>
+          <li>Organizations seeking independent assessment, not validation</li>
+        </ul>
       </div>
     </div>
   </section>
 
 
   <section id="discussion-form">
-  <h2>Submit Your Request</h2>
-  <p>
-    This form is intended for decision-makers seeking audit clarity before engaging VEXOR.
-  </p>
-
-  <div class="card">
-    <form id="discussionForm" action="https://formspree.io/f/xnnekngr" method="POST">
-
-      <!-- Request Type -->
-      <label>Type of Audit Request *</label>
-      <select id="auditType" name="auditType" required>
-        <option value="">Select an option</option>
-        <option>Employee Audit</option>
-        <option>Team Audit</option>
-        <option>Organization Audit</option>
-        <option>Not sure / Need guidance</option>
-      </select>
-      <p style="font-size:13px; color:var(--text-muted); margin-top:6px;">
-        Organization-wide audits require mandatory discussion prior to engagement.
-      </p>
-
-      <!-- Organization Audit Context -->
-    <div class="org-scope" id="orgScope">
-
-    <h3 style="margin-top:28px; font-size:16px; font-weight:500;">
-        Organization Audit Context
-    </h3>
-
-    <p style="font-size:13px; color:var(--text-muted); margin-bottom:12px;">
-        Required only if requesting an organization-wide audit. These audits mandate prior discussion.
+    <h2>Submit Your Request</h2>
+    <p>
+      This form is intended for decision-makers seeking audit clarity before engaging VEXOR.
     </p>
 
-    <label>Approximate Employee Count</label>
-    <select name="orgEmployeeCount">
-        <option value="">Select range</option>
-        <option>1 – 25</option>
-        <option>26 – 100</option>
-        <option>101 – 500</option>
-        <option>501 – 1,000</option>
-        <option>1,000+</option>
-    </select>
+    <div class="card">
+      <form id="discussionForm" action="https://formspree.io/f/xnnekngr" method="POST">
 
-    <label>Industry / Sector</label>
-    <input type="text" name="orgIndustry" placeholder="e.g., IT Services, Manufacturing, Education, Healthcare">
+        <!-- Request Type -->
+        <label>Type of Audit Request *</label>
+        <select id="auditType" name="auditType" required>
+          <option value="">Select an option</option>
+          <option>Employee Audit</option>
+          <option>Team Audit</option>
+          <option>Organization Audit</option>
+          <option>Not sure / Need guidance</option>
+        </select>
+        <p style="font-size:13px; color:var(--text-muted); margin-top:6px;">
+          Organization-wide audits require mandatory discussion prior to engagement.
+        </p>
 
-    <label>Primary Concern</label>
-    <select name="orgConcern">
-        <option value="">Select primary concern</option>
-        <option>Skill-role mismatch</option>
-        <option>Leadership capability gaps</option>
-        <option>Low productivity / accountability</option>
-        <option>Hiring quality concerns</option>
-        <option>Future readiness / succession risk</option>
-        <option>General capability assessment</option>
-    </select>
+        <!-- Organization Audit Context -->
+        <div class="org-scope" id="orgScope">
 
-    <label>Audit Urgency</label>
-    <select name="orgUrgency">
-        <option value="">Select timeline</option>
-        <option>Immediate (within 30 days)</option>
-        <option>1 – 3 months</option>
-        <option>3 – 6 months</option>
-        <option>Exploratory</option>
-    </select>
-    <p style="font-size:13px; color:var(--text-muted); margin-bottom:8px;">
-  Organization-wide audits require executive-level sponsorship or delegated authority.
-</p>
+          <h3 style="margin-top:28px; font-size:16px; font-weight:500;">
+            Organization Audit Context
+          </h3>
 
+          <p style="font-size:13px; color:var(--text-muted); margin-bottom:12px;">
+            Required only if requesting an organization-wide audit. These audits mandate prior discussion.
+          </p>
 
-    <label class="checkbox">
-        <input type="checkbox" name="orgAuthorityConfirmation">
-        <span>I confirm that I am part of the decision-making authority or officially delegated for this request.</span>
-    </label>
+          <label>Approximate Employee Count</label>
+          <select name="orgEmployeeCount">
+            <option value="">Select range</option>
+            <option>1 – 25</option>
+            <option>26 – 100</option>
+            <option>101 – 500</option>
+            <option>501 – 1,000</option>
+            <option>1,000+</option>
+          </select>
 
-    </div>
+          <label>Industry / Sector</label>
+          <input type="text" name="orgIndustry" placeholder="e.g., IT Services, Manufacturing, Education, Healthcare">
 
+          <label>Primary Concern</label>
+          <select name="orgConcern">
+            <option value="">Select primary concern</option>
+            <option>Skill-role mismatch</option>
+            <option>Leadership capability gaps</option>
+            <option>Low productivity / accountability</option>
+            <option>Hiring quality concerns</option>
+            <option>Future readiness / succession risk</option>
+            <option>General capability assessment</option>
+          </select>
 
-      <!-- Discussion Mode -->
-      <label>Discussion Mode *</label>
-      <select required id="discussionMode" name="discussionMode">
-        <option value="">Select discussion type</option>
-        <option value="written">Written Inquiry (No scheduling)</option>
-        <option value="voice">Paid Voice Discussion (20 mins)</option>
-        <option value="video">Paid Video Discussion (30 mins)</option>
-        
-      </select>
-      <p style="font-size:13px; color:var(--text-muted); margin-top:6px;">
-  Written requests are reviewed asynchronously. Paid discussions allow real-time clarification and faster alignment.
-</p>
-<p style="font-size:12px; color:var(--text-muted); margin-top:4px;">
-  Written inquiries may receive clarifying questions but do not include meetings or guaranteed response timelines.
-</p>
-
+          <label>Audit Urgency</label>
+          <select name="orgUrgency">
+            <option value="">Select timeline</option>
+            <option>Immediate (within 30 days)</option>
+            <option>1 – 3 months</option>
+            <option>3 – 6 months</option>
+            <option>Exploratory</option>
+          </select>
+          <p style="font-size:13px; color:var(--text-muted); margin-bottom:8px;">
+            Organization-wide audits require executive-level sponsorship or delegated authority.
+          </p>
 
 
-      <!-- Identity -->
-      <label>Full Name *</label>
-      <input type="text" name="fullName" required placeholder="Your full name">
+          <label class="checkbox">
+            <input type="checkbox" name="orgAuthorityConfirmation">
+            <span>I confirm that I am part of the decision-making authority or officially delegated for this
+              request.</span>
+          </label>
 
-      <label>Organization / Institution *</label>
-      <input type="text" name="organization" required placeholder="Company, school, or institution name">
+        </div>
 
-      <label>Official Email Address *</label>
-      <input type="email" name="email" required placeholder="name@organization.com">
 
-      <!-- Location -->
-      <label>Country *</label>
-      <input type="text" name="country" required placeholder="Country">
+        <!-- Discussion Mode -->
+        <label>Discussion Mode *</label>
+        <select required id="discussionMode" name="discussionMode">
+          <option value="">Select discussion type</option>
+          <option value="written">Written Inquiry (No scheduling)</option>
+          <option value="voice">Paid Voice Discussion (20 mins)</option>
+          <option value="video">Paid Video Discussion (30 mins)</option>
 
-      <label>City (Optional)</label>
-      <input type="text" name="city" placeholder="City">
+        </select>
+        <p style="font-size:13px; color:var(--text-muted); margin-top:6px;">
+          Written requests are reviewed asynchronously. Paid discussions allow real-time clarification and faster
+          alignment.
+        </p>
+        <p style="font-size:12px; color:var(--text-muted); margin-top:4px;">
+          Written inquiries may receive clarifying questions but do not include meetings or guaranteed response
+          timelines.
+        </p>
 
-      <!-- Context -->
-      <label>Brief Description *</label>
-      <textarea rows="5" name="description" required
-        placeholder="Briefly explain your concern, scope, or reason for reaching out. Be specific.">
+
+
+        <!-- Identity -->
+        <label>Full Name *</label>
+        <input type="text" name="fullName" required placeholder="Your full name">
+
+        <label>Organization / Institution *</label>
+        <input type="text" name="organization" required placeholder="Company, school, or institution name">
+
+        <label>Official Email Address *</label>
+        <input type="email" name="email" required placeholder="name@organization.com">
+
+        <!-- Location -->
+        <label>Country *</label>
+        <input type="text" name="country" required placeholder="Country">
+
+        <label>City (Optional)</label>
+        <input type="text" name="city" placeholder="City">
+
+        <!-- Context -->
+        <label>Brief Description *</label>
+        <textarea rows="5" name="description" required
+          placeholder="Briefly explain your concern, scope, or reason for reaching out. Be specific.">
       </textarea>
 
-      <!-- Consent -->
-      <label class="checkbox">
-        <input type="checkbox" name="consent" required>
-        <span>I acknowledge that this request is for audit qualification and scope clarification only
-and does not constitute advisory or consulting services.
-</span>
-      </label>
+        <!-- Consent -->
+        <label class="checkbox">
+          <input type="checkbox" name="consent" required>
+          <span>I acknowledge that this request is for audit qualification and scope clarification only
+            and does not constitute advisory or consulting services.
+          </span>
+        </label>
 
-      <label class="checkbox">
-        <input type="checkbox" name="legalAgreement" required>
-        <span>I have read and agree to the <a href="legal-guidelines.html" target="_blank">Legal Guidelines</a>, <a href="terms.html" target="_blank">Terms of Service</a>, and <a href="privacy-policy.html" target="_blank">Privacy Policy</a>.</span>
-      </label>
+        <label class="checkbox">
+          <input type="checkbox" name="legalAgreement" required>
+          <span>I have read and agree to the <a href="legal-guidelines.html" target="_blank">Legal Guidelines</a>, <a
+              href="terms.html" target="_blank">Terms of Service</a>, and <a href="privacy-policy.html"
+              target="_blank">Privacy Policy</a>.</span>
+        </label>
 
-      <div class="form-status success" id="formSuccess">
-        Your request has been submitted. Redirecting to payment… (if selected).
+        <div class="form-status success" id="formSuccess">
+          Your request has been submitted. Redirecting to payment… (if selected).
         </div>
 
         <div class="form-status error" id="formError">
-        Something went wrong. Please try again later.
+          Something went wrong. Please try again later.
         </div>
 
 
-      <!-- Submit -->
-      <button type="submit" class="cta" id="submitBtn">Submit Request</button>
-      
-      <p style="font-size:13px; color:var(--text-muted); margin-top:12px;">
-        Written inquiries do not include scheduling or guaranteed response timelines.
-      </p>
+        <!-- Submit -->
+        <button type="submit" class="cta" id="submitBtn">Submit Request</button>
 
-    </form>
-  </div>
-</section>
+        <p style="font-size:13px; color:var(--text-muted); margin-top:12px;">
+          Written inquiries do not include scheduling or guaranteed response timelines.
+        </p>
+
+      </form>
+    </div>
+  </section>
 
 
   <section>
@@ -580,79 +590,80 @@ and does not constitute advisory or consulting services.
   <script src="assets/js/pricing.js"></script>
 
   <script>
-  const auditType = document.getElementById('auditType');
-  const orgScope = document.getElementById('orgScope');
-  const discussionMode = document.getElementById('discussionMode');
-  const form = document.getElementById("discussionForm");
-  const submitBtn = document.getElementById("submitBtn");
-  const successMsg = document.getElementById("formSuccess");
-  const errorMsg = document.getElementById("formError");
+    const auditType = document.getElementById('auditType');
+    const orgScope = document.getElementById('orgScope');
+    const discussionMode = document.getElementById('discussionMode');
+    const form = document.getElementById("discussionForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const successMsg = document.getElementById("formSuccess");
+    const errorMsg = document.getElementById("formError");
 
-  /* ===== Org Audit Toggle ===== */
-  auditType.addEventListener('change', () => {
-    if (auditType.value === 'Organization Audit') {
-      orgScope.style.display = 'block';
-    } else {
-      orgScope.style.display = 'none';
-    }
-  });
-
-  /* ===== Auto-select discussion mode ===== */
-  function selectMode(mode) {
-    discussionMode.value = mode;
-  }
-
-  /* ===== Form Submit ===== */
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const selectedMode = discussionMode.value; // capture BEFORE submit
-
-    submitBtn.classList.add("loading");
-    submitBtn.disabled = true;
-    successMsg.style.display = "none";
-    errorMsg.style.display = "none";
-
-    const formData = new FormData(form);
-
-    fetch(form.action, {
-      method: "POST",
-      body: formData,
-      headers: {
-        "Accept": "application/json"
+    /* ===== Org Audit Toggle ===== */
+    auditType.addEventListener('change', () => {
+      if (auditType.value === 'Organization Audit') {
+        orgScope.style.display = 'block';
+      } else {
+        orgScope.style.display = 'none';
       }
-    })
-    .then(response => {
-      submitBtn.classList.remove("loading");
-      submitBtn.disabled = false;
-
-      if (!response.ok) throw new Error("Submission failed");
-
-      successMsg.style.display = "block";
-      successMsg.scrollIntoView({ behavior: "smooth", block: "center" });
-
-      // Redirect AFTER user feedback
-      setTimeout(() => {
-        if (selectedMode === "voice") {
-          window.location.href = "https://www.paypal.com/ncp/payment/S7KD4YHREZ7QW";
-        } else if (selectedMode === "video") {
-          window.location.href = "https://www.paypal.com/ncp/payment/PFKAPRSVC2BPA";
-        }
-      }, 1200);
-
-      form.reset();
-      orgScope.style.display = "none";
-    })
-    .catch(() => {
-      submitBtn.classList.remove("loading");
-      submitBtn.disabled = false;
-      errorMsg.style.display = "block";
     });
-  });
-</script>
 
-<script src="assets/js/pricing.js"></script>
+    /* ===== Auto-select discussion mode ===== */
+    function selectMode(mode) {
+      discussionMode.value = mode;
+    }
+
+    /* ===== Form Submit ===== */
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const selectedMode = discussionMode.value; // capture BEFORE submit
+
+      submitBtn.classList.add("loading");
+      submitBtn.disabled = true;
+      successMsg.style.display = "none";
+      errorMsg.style.display = "none";
+
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          "Accept": "application/json"
+        }
+      })
+        .then(response => {
+          submitBtn.classList.remove("loading");
+          submitBtn.disabled = false;
+
+          if (!response.ok) throw new Error("Submission failed");
+
+          successMsg.style.display = "block";
+          successMsg.scrollIntoView({ behavior: "smooth", block: "center" });
+
+          // Redirect AFTER user feedback
+          setTimeout(() => {
+            if (selectedMode === "voice") {
+              window.location.href = "https://www.paypal.com/ncp/payment/S7KD4YHREZ7QW";
+            } else if (selectedMode === "video") {
+              window.location.href = "https://www.paypal.com/ncp/payment/PFKAPRSVC2BPA";
+            }
+          }, 1200);
+
+          form.reset();
+          orgScope.style.display = "none";
+        })
+        .catch(() => {
+          submitBtn.classList.remove("loading");
+          submitBtn.disabled = false;
+          errorMsg.style.display = "block";
+        });
+    });
+  </script>
+
+  <script src="assets/js/pricing.js"></script>
 
 
 </body>
+
 </html>
