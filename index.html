@@ -88,6 +88,47 @@
       font-size: 13px;
       color: var(--text-muted);
     }
+
+    .assessment-section {
+    background: linear-gradient(135deg, #050A18 0%, #0a122a 100%);
+    color: #ffffff;
+    padding: 80px 20px;
+    text-align: center;
+    border-top: 1px solid #1a2b4a;
+}
+
+#quiz-container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid #2a3b5a;
+}
+
+.opt-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    background: transparent;
+    border: 1px solid #4a5b7a;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.opt-btn:hover {
+    background: #007bff;
+    border-color: #007bff;
+}
+
+#risk-score {
+    color: #ff4d4d; /* Red for urgency */
+    font-size: 2.5rem;
+    font-weight: bold;
+}
   </style>
 </head>
 
@@ -296,6 +337,24 @@
     </div>
   </section>
 
+  <section id="risk-calculator" class="assessment-section">
+    <div class="container">
+        <h2>Preliminary Execution Risk Assessment</h2>
+        <p>Answer 5 questions to identify hidden organizational drag.</p>
+        
+        <div id="quiz-container">
+            <div id="question-box">
+                <h3 id="question-text">Loading assessment...</h3>
+                <div id="options-container"></div>
+            </div>
+            <div id="result-box" style="display:none;">
+                <h3>Your Organization's Risk Profile: <span id="risk-score">0%</span></h3>
+                <p id="risk-desc"></p>
+            </div>
+        </div>
+    </div>
+  </section>
+
   <!-- CTA -->
 
   <section class="final-cta">
@@ -318,7 +377,53 @@
 
   <div id="footer"></div>
   <script src="assets/js/include.js"></script>
+  <script>const questions = [
+    { q: "If your top 3 performers left tomorrow, would operations continue normally?", weight: 25 },
+    { q: "Are project deadlines met without 'founding team heroics'?", weight: 20 },
+    { q: "Is there a clear record of decision-making trade-offs for major projects?", weight: 20 },
+    { q: "Do middle managers have the authority to pivot without CEO approval?", weight: 15 },
+    { q: "Is 'Integrity Risk' currently measured in your hiring/promotion process?", weight: 20 }
+];
 
+let currentQ = 0;
+let totalRisk = 0;
+
+function loadQuestion() {
+    const qBox = document.getElementById("question-text");
+    const optBox = document.getElementById("options-container");
+    qBox.innerText = questions[currentQ].q;
+    optBox.innerHTML = `
+        <button class="opt-btn" onclick="answer(0)">Yes (Low Risk)</button>
+        <button class="opt-btn" onclick="answer(${questions[currentQ].weight})">No (High Risk)</button>
+    `;
+}
+
+function answer(val) {
+    totalRisk += val;
+    currentQ++;
+    if (currentQ < questions.length) {
+        loadQuestion();
+    } else {
+        showResult();
+    }
+}
+
+function showResult() {
+    document.getElementById("question-box").style.display = "none";
+    const resBox = document.getElementById("result-box");
+    resBox.style.display = "block";
+    document.getElementById("risk-score").innerText = totalRisk + "%";
+    
+    let desc = "";
+    if (totalRisk < 30) desc = "Low Drag. Level 45 Audit recommended for optimization.";
+    else if (totalRisk < 60) desc = "Moderate Execution Risk. Level 83 Audit recommended to secure operations.";
+    else desc = "High Fragility. Immediate Level 198 Forensic Audit advised.";
+    
+    document.getElementById("risk-desc").innerText = desc;
+}
+
+loadQuestion();</script>
 </body>
+
 
 </html>
